@@ -246,7 +246,9 @@ export default function App() {
               <motion.div variants={scaleIn} className="relative group">
                 <div className={`w-36 h-36 md:w-44 md:h-44 rounded-2xl border flex items-center justify-center overflow-hidden relative ${dm ? 'bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-cyan-500/20 border-white/[0.08]' : 'bg-gradient-to-br from-blue-100 via-violet-100 to-cyan-100 border-black/[0.08]'}`}>
                   <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-500 ${dm ? 'from-blue-600/10 to-violet-600/10 group-hover:from-blue-600/20 group-hover:to-violet-600/20' : 'from-blue-400/10 to-violet-400/10 group-hover:from-blue-400/20 group-hover:to-violet-400/20'}`} />
-                  <div className="text-6xl md:text-7xl z-10 float-animation">👨‍💻</div>
+                  <div className="z-10 w-full h-full p-1.5">
+                    <img src="https://github.com/Insane-Hk.png" alt="Profile" className="w-full h-full object-cover rounded-[14px] shadow-lg transition-transform duration-500 group-hover:scale-105" />
+                  </div>
                 </div>
                 <div className={`absolute -bottom-2 -right-2 px-3 py-1.5 border rounded-lg text-xs font-mono shadow-xl ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
                   CGPA: <span className="text-emerald-500 font-bold"><AnimatedNumber value={8.0} /></span>
@@ -259,6 +261,19 @@ export default function App() {
               <SocialLink href="mailto:hiteshapn@gmail.com" icon={<Mail size={16} />} label="Email" darkMode={dm} />
               <SocialLink href="https://www.linkedin.com/in/hiteshkhatwani2005/" icon={<Linkedin size={16} />} label="LinkedIn" darkMode={dm} />
               <SocialLink href="https://github.com/Insane-Hk" icon={<Github size={16} />} label="GitHub" darkMode={dm} />
+              
+              <button
+                onClick={() => {
+                  setActiveTab('projects');
+                  window.scrollTo({ top: 500, behavior: 'smooth' });
+                }}
+                className={`flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all text-sm font-bold shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${dm
+                  ? 'bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white shadow-emerald-500/25 border border-emerald-400/30'
+                  : 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white shadow-emerald-500/30 border border-emerald-600/20'}`}
+              >
+                <Code2 size={16} />
+                <span>Projects</span>
+              </button>
             </motion.div>
           </section>
 
