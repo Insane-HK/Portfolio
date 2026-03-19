@@ -251,7 +251,7 @@ export default function App() {
                     <img src={profilePic} alt="Profile" className="w-full h-full object-cover rounded-[14px] shadow-lg transition-transform duration-500 group-hover:scale-105" />
                   </div>
                 </div>
-                <div className={`absolute -bottom-2 -right-2 px-3 py-1.5 border rounded-lg text-xs font-mono shadow-xl ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
+                <div className={`absolute -bottom-2 -right-2 px-3 py-1.5 border rounded-lg text-xs font-mono shadow-xl whitespace-nowrap z-20 ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
                   CGPA: <span className="text-emerald-500 font-bold"><AnimatedNumber value={8.0} /></span>
                 </div>
               </motion.div>
@@ -266,7 +266,11 @@ export default function App() {
               <button
                 onClick={() => {
                   setActiveTab('projects');
-                  window.scrollTo({ top: 500, behavior: 'smooth' });
+                  const target = document.getElementById('content-tabs');
+                  if (target) {
+                    const y = target.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
                 }}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-lg transition-all text-sm font-bold shadow-lg hover:-translate-y-0.5 active:translate-y-0 ${dm
                   ? 'bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white shadow-emerald-500/25 border border-emerald-400/30'
@@ -284,7 +288,7 @@ export default function App() {
           </motion.section>
 
           {/* Content Tabs */}
-          <div className="min-h-[500px]">
+          <div id="content-tabs" className="min-h-[500px]">
             <AnimatePresence mode="wait">
               {activeTab === 'about' && <AboutSection key="about" darkMode={dm} />}
               {activeTab === 'projects' && <ProjectsSection key="projects" darkMode={dm} />}
