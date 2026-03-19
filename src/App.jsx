@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Github, Linkedin, Mail, Terminal, Award, Users, Cloud, Brain, Database, Globe, Sparkles, Bot, Lightbulb, Zap, ExternalLink, Code2, Trophy, Briefcase, GraduationCap, Sun, Moon, Rocket, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import profilePic from './assets/profile.jpg';
 
 // --- ANIMATION VARIANTS ---
 const fadeInUp = {
@@ -247,7 +248,7 @@ export default function App() {
                 <div className={`w-36 h-36 md:w-44 md:h-44 rounded-2xl border flex items-center justify-center overflow-hidden relative ${dm ? 'bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-cyan-500/20 border-white/[0.08]' : 'bg-gradient-to-br from-blue-100 via-violet-100 to-cyan-100 border-black/[0.08]'}`}>
                   <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-500 ${dm ? 'from-blue-600/10 to-violet-600/10 group-hover:from-blue-600/20 group-hover:to-violet-600/20' : 'from-blue-400/10 to-violet-400/10 group-hover:from-blue-400/20 group-hover:to-violet-400/20'}`} />
                   <div className="z-10 w-full h-full p-1.5">
-                    <img src="https://github.com/Insane-Hk.png" alt="Profile" className="w-full h-full object-cover rounded-[14px] shadow-lg transition-transform duration-500 group-hover:scale-105" />
+                    <img src={profilePic} alt="Profile" className="w-full h-full object-cover rounded-[14px] shadow-lg transition-transform duration-500 group-hover:scale-105" />
                   </div>
                 </div>
                 <div className={`absolute -bottom-2 -right-2 px-3 py-1.5 border rounded-lg text-xs font-mono shadow-xl ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
