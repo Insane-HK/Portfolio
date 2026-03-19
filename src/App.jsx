@@ -154,7 +154,7 @@ export default function App() {
           : 'bg-white/90 backdrop-blur-xl border-b border-black/[0.08] shadow-lg shadow-black/10'
         : 'bg-transparent border-b border-transparent'
       }`}>
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -194,7 +194,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 pt-28 pb-24 relative z-10">
+      <main className="max-w-5xl mx-auto px-6 pt-28 pb-24 relative z-10">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -203,7 +203,7 @@ export default function App() {
         >
           {/* Hero Header */}
           <section className="space-y-8">
-            <motion.div variants={fadeInUp} className="flex flex-col-reverse md:flex-row justify-between items-start gap-8">
+            <motion.div variants={fadeInUp} className="flex flex-col-reverse md:flex-row justify-between md:items-center gap-8 md:gap-16">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="px-3 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-500 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
@@ -214,7 +214,7 @@ export default function App() {
                     🎓 B.Tech CSE '27
                   </span>
                 </div>
-                <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 leading-[1.1] ${dm ? 'text-white' : 'text-neutral-900'}`}>
+                <h1 className={`text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-4 leading-[1.1] ${dm ? 'text-white' : 'text-neutral-900'}`}>
                   Hi, I'm{' '}
                   <span className="gradient-text">Hitesh</span>
                   <motion.span
@@ -244,14 +244,14 @@ export default function App() {
               </div>
 
               {/* Profile Visual */}
-              <motion.div variants={scaleIn} className="relative group">
-                <div className={`w-36 h-36 md:w-44 md:h-44 rounded-2xl border flex items-center justify-center overflow-hidden relative ${dm ? 'bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-cyan-500/20 border-white/[0.08]' : 'bg-gradient-to-br from-blue-100 via-violet-100 to-cyan-100 border-black/[0.08]'}`}>
+              <motion.div variants={scaleIn} className="relative group mx-auto md:mx-0">
+                <div className={`w-36 h-36 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-2xl md:rounded-[2rem] border flex items-center justify-center overflow-hidden relative ${dm ? 'bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-cyan-500/20 border-white/[0.08]' : 'bg-gradient-to-br from-blue-100 via-violet-100 to-cyan-100 border-black/[0.08]'}`}>
                   <div className={`absolute inset-0 bg-gradient-to-br transition-all duration-500 ${dm ? 'from-blue-600/10 to-violet-600/10 group-hover:from-blue-600/20 group-hover:to-violet-600/20' : 'from-blue-400/10 to-violet-400/10 group-hover:from-blue-400/20 group-hover:to-violet-400/20'}`} />
                   <div className="z-10 w-full h-full p-1.5">
                     <img src={profilePic} alt="Profile" className="w-full h-full object-cover rounded-[14px] shadow-lg transition-transform duration-500 group-hover:scale-105" />
                   </div>
                 </div>
-                <div className={`absolute -bottom-2 -right-2 px-3 py-1.5 border rounded-lg text-xs font-mono shadow-xl whitespace-nowrap z-20 ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
+                <div className={`absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 px-4 py-2 border md:rounded-xl rounded-lg text-xs md:text-sm font-mono shadow-2xl whitespace-nowrap z-20 ${dm ? 'bg-[#0d0d0d] border-white/[0.08] text-neutral-400' : 'bg-white border-black/[0.08] text-neutral-500'}`}>
                   CGPA: <span className="text-emerald-500 font-bold"><AnimatedNumber value={8.0} /></span>
                 </div>
               </motion.div>
@@ -299,7 +299,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className={`relative z-10 border-t py-10 ${dm ? 'border-white/[0.06]' : 'border-black/[0.06]'}`}>
-        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className={`text-sm ${dm ? 'text-neutral-600' : 'text-neutral-400'}`}>© 2026 Hitesh Khatwani. Crafted with ❤️</p>
           <div className={`flex items-center gap-4 text-xs ${dm ? 'text-neutral-600' : 'text-neutral-400'}`}>
             <span className="flex items-center gap-1.5">
