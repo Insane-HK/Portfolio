@@ -77,7 +77,7 @@ export default function AchievementsSection({ darkMode: dm }) {
                 </span>
               </div>
               <h3 className={`text-2xl font-bold mb-2 transition-colors ${dm ? 'text-white group-hover:text-violet-400' : 'text-neutral-900 group-hover:text-violet-600'}`}>Smart India Hackathon</h3>
-              <p className={`text-sm ${dm ? 'text-neutral-400' : 'text-neutral-600'}`}>Top 10 national finalist for the Ministry of Education's digital initiative.</p>
+              <p className={`text-sm ${dm ? 'text-neutral-400' : 'text-neutral-600'}`}>3x clg finalist</p>
             </div>
           </div>
         </div>
