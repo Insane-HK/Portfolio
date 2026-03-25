@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Github, Linkedin, Mail, Terminal, Award, Users, Cloud, Brain, Database, Globe, Sparkles, Bot, Lightbulb, Zap, ExternalLink, Code2, Trophy, Briefcase, GraduationCap, Sun, Moon, Rocket, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import profilePic from './assets/profile.jpg';
-import AchievementsSection from './AchievementsSection';
 
 // --- ANIMATION VARIANTS ---
 const fadeInUp = {
@@ -178,7 +177,6 @@ export default function App() {
             <div className={`flex gap-1 text-sm font-medium rounded-full p-1 border ${dm ? 'bg-white/[0.03] border-white/[0.06]' : 'bg-black/[0.04] border-black/[0.08]'}`}>
               <NavButton id="about" label="About" activeTab={activeTab} setActiveTab={setActiveTab} darkMode={dm} />
               <NavButton id="projects" label="Projects" activeTab={activeTab} setActiveTab={setActiveTab} darkMode={dm} />
-              <NavButton id="achievements" label="Achievements" activeTab={activeTab} setActiveTab={setActiveTab} darkMode={dm} />
             </div>
             {/* Dark / Light Toggle */}
             <motion.button
@@ -294,7 +292,6 @@ export default function App() {
             <AnimatePresence mode="wait">
               {activeTab === 'about' && <AboutSection key="about" darkMode={dm} />}
               {activeTab === 'projects' && <ProjectsSection key="projects" darkMode={dm} />}
-              {activeTab === 'achievements' && <AchievementsSection key="achievements" darkMode={dm} />}
             </AnimatePresence>
           </div>
         </motion.div>
